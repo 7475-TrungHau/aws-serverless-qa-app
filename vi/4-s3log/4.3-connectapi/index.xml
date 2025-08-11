@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kết nối API và Logic on AWS System Manager</title>
-    <link>/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/</link>
+    <link>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/</link>
     <description>Recent content in Kết nối API và Logic on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

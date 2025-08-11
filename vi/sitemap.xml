@@ -2,223 +2,209 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/aws-serverless-qa-app/vi/1-introduce/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/1-introduce/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/1-introduce/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/1-introduce/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/1-introduce/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/4-s3log/4.1-appsync/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/4-s3log/4.1-appsync/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/2-prerequiste/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/2-prerequiste/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/4-s3log/4.2-creates3bucket/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/4-s3log/4.2-creates3bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.2-private-instance/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/3-accessibilitytoinstances/3.2-private-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.3-iam/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/3-accessibilitytoinstances/3.3-iam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/3-accessibilitytoinstances/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/3-accessibilitytoinstances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/4-s3log/4.3-connectapi/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/4-s3log/4.3-connectapi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/4-s3log/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/4-s3log/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/4-s3log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/4-s3log/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/5-portfwd/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/5-portfwd/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/5-portfwd/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/6-cleanup/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/6-cleanup/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/6-cleanup/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/6-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/6-cleanup/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/6-cleanup/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/</loc>
-  </url><url>
-    <loc>/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/5-portfwd/5.1-setup/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/categories/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/categories/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/categories/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/categories/"
                 />
   </url><url>
-    <loc>/aws-serverless-qa-app/vi/tags/</loc>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/aws-serverless-qa-app/tags/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/aws-serverless-qa-app/vi/tags/"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/tags/"
                 />
   </url>
 </urlset>
