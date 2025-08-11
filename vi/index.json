@@ -1,160 +1,160 @@
 [
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/1-introduce/",
+	"uri": "http://localhost:1313/vi/1-introduce/",
 	"title": "Giới thiệu",
 	"tags": [],
 	"description": "",
 	"content": "Trong bối cảnh các sự kiện trực tuyến (webinars, workshops, livestreams) ngày càng trở nên phổ biến, việc duy trì tương tác và thu thập phản hồi từ người tham gia là một thách thức lớn. Các công cụ chat truyền thống thường gây ra tình trạng quá tải thông tin, độ trễ cao và thiếu khả năng sàng lọc, làm giảm hiệu quả tương tác và trải nghiệm người dùng.\nLab này được thiết kế nhằm giúp bạn tiếp cận và thực hành trực tiếp việc xây dựng một giải pháp hoàn chỉnh để giải quyết bài toán trên bằng cách sử dụng các dịch vụ serverless của AWS. Cụ thể, bạn sẽ được hướng dẫn:\nAWS AppSync: Xây dựng một API GraphQL linh hoạt, quản lý các kết nối real-time (WebSocket) thông qua GraphQL Subscriptions để cập nhật dữ liệu tức thì. AWS Lambda: Triển khai logic nghiệp vụ (business logic) để xử lý các yêu cầu như tạo câu hỏi, upvote, và quản lý bình chọn mà không cần quản lý máy chủ. Amazon DynamoDB: Thiết kế và triển khai cơ sở dữ liệu NoSQL hiệu năng cao với mô hình Single-Table Design để lưu trữ và truy xuất dữ liệu với độ trễ mili giây. Amazon Cognito: Tích hợp một hệ thống xác thực và quản lý người dùng an toàn, cho phép phân quyền các chức năng như tạo sự kiện, tạo poll. Amazon CloudWatch: Sử dụng Amazon CloudWatch để theo dõi và quản lý các hoạt động của ứng dụng, bao gồm các thông tin về các sự kiện, lỗi, và tình trạng hoạt động của ứng dụng. Mô hình kiến trúc AWS AppSync: Đóng vai trò là cổng API GraphQL, là điểm cuối (endpoint) duy nhất mà frontend sẽ giao tiếp. AppSync chịu trách nhiệm xử lý các query (đọc dữ liệu), mutation (thay đổi dữ liệu), và quản lý các subscription để đẩy dữ liệu real-time đến client. AWS Lambda: Là tầng xử lý logic. Khi AppSync nhận một yêu cầu cần xử lý nghiệp vụ phức tạp (ví dụ: upvoteQuestion), nó sẽ gọi đến một hàm Lambda tương ứng. Lambda sẽ thực thi code và tương tác với các dịch vụ khác như DynamoDB. Amazon DynamoDB: Là cơ sở dữ liệu NoSQL được chọn để lưu trữ toàn bộ dữ liệu của ứng dụng (sự kiện, câu hỏi, poll, người dùng). Mô hình Single-Table Design được áp dụng để tối ưu hóa số lượng truy vấn và giảm độ trễ. Amazon Cognito: Cung cấp giải pháp quản lý định danh người dùng hoàn chỉnh, từ đăng ký, đăng nhập, quên mật khẩu cho đến quản lý phiên làm việc. Nó tích hợp trực tiếp với AppSync để bảo vệ các API endpoint. Amazon CloudWatch: Sử dụng để theo dõi và quản lý các hoạt động của ứng dụng, bao gồm các thông tin về các sự kiện, lỗi, và tình trạng hoạt động của ứng dụng. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/",
+	"uri": "http://localhost:1313/vi/4-s3log/4.1-appsync/",
 	"title": "Thiết lập API GraphQL với AWS AppSync",
 	"tags": [],
 	"description": "",
 	"content": " Tạo một API mới Trên thanh tìm kiếm của AWS Management Console, gõ AppSync và chọn dịch vụ.\nTrên trang chính của AppSync, nhấn Create API. Chọn Build from scratch và nhấn Next. API name: Đặt tên là RealtimeQAPlatform-API và nhấn Next. Chọn Create GraphQL resource later, sau đó chọn Next Review và chọn Create API Cấu hình Phương thức Xác thực Đây là bước quan trọng để bảo vệ API của bạn. Chúng ta sẽ cấu hình hai lớp bảo vệ: API Key: Dành cho các truy cập công khai, không yêu cầu người dùng đăng nhập (ví dụ: xem câu hỏi). Amazon Cognito: Dành cho các hành động cần định danh (ví dụ: tạo event, upvote). Thực hiện cấu hình trong menu bên trái của API vừa tạo:\nChọn Settings. Primary authorization mode: Chọn Add API key. Bạn có thể giữ nguyên thời gian hết hạn mặc định hoặc tùy chỉnh bằng Edit.\nAdditional authorization modes: Nhấn Add . Authorization mode: Chọn Amazon Cognito User Pools. Cognito User Pool: Chọn Region: AP-Southeast-1 Chọn User Pool bạn đã tạo (RealtimeQAPlatform-UserPool). Nhấn add. Định nghĩa GraphQL Schema Schema là bản \u0026ldquo;hợp đồng\u0026rdquo; định nghĩa tất cả các loại dữ liệu và các hành động (query, mutation, subscription) mà API của bạn hỗ trợ.\nTrong menu bên trái, chọn Schema.\nXóa toàn bộ nội dung mẫu trong trình soạn thảo.\nDán toàn bộ nội dung schema hoàn chỉnh dưới đây vào. Schema này định nghĩa các kiểu dữ liệu Event, Question, Poll, User và tất cả các hành động cần thiết.\ntype Event { id: ID! name: String! description: String creatorId: ID questions: [Question] polls: [Poll] createdAt: AWSDateTime! } type Question { id: ID! eventId: ID! content: String! author: User! upvotes: Int! createdAt: AWSDateTime! } type Poll { id: ID! eventId: ID! questionText: String! options: [PollOption!]! totalVotes: Int! } type PollOption { text: String! votes: Int! } type User { id: ID! name: String! } input CreateEventInput { name: String! description: String creatorId: ID! } input CreateQuestionInput { eventId: ID! content: String! authorId: ID! authorName: String! } input UpvoteQuestionInput { eventId: ID! questionId: ID! userId: ID! } input PollOptionInput { text: String! } input CreatePollInput { eventId: ID! questionText: String! options: [PollOptionInput!]! } input SubmitPollVoteInput { eventId: ID! pollId: ID! optionText: String! userId: ID! } type Query { getEvent(id: ID!): Event @aws_api_key listEvents: [Event] @aws_api_key } type Mutation { createEvent(input: CreateEventInput!): Event @aws_cognito_user_pools createQuestion(input: CreateQuestionInput!): Question @aws_api_key upvoteQuestion(input: UpvoteQuestionInput!): Question @aws_api_key createPoll(input: CreatePollInput!): Poll @aws_cognito_user_pools submitPollVote(input: SubmitPollVoteInput!): Poll @aws_api_key } type Subscription { onQuestionUpdated(eventId: ID!): Question @aws_subscribe(mutations: [\u0026#34;createQuestion\u0026#34;, \u0026#34;upvoteQuestion\u0026#34;]) onPollUpdated(eventId: ID!): Poll @aws_subscribe(mutations: [\u0026#34;createPoll\u0026#34;, \u0026#34;submitPollVote\u0026#34;]) } Nhấn Save Schema. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/",
+	"uri": "http://localhost:1313/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/",
 	"title": "Triển khai Cơ sở dữ liệu với Amazon DynamoDB",
 	"tags": [],
 	"description": "",
 	"content": "Trong lab này, chúng ta sẽ tạo một bảng DynamoDB duy nhất để lưu trữ toàn bộ dữ liệu cho ứng dụng.\nTruy cập Bảng điều khiển DynamoDB Đăng nhập vào AWS Management Console. Trên thanh tìm kiếm, gõ DynamoDB và chọn dịch vụ DynamoDB. Tạo Bảng mới: Trên trang chính của DynamoDB, nhấn vào nút Create table. Cấu hình Chi tiết Bảng: Bạn sẽ được chuyển đến trang cấu hình. Hãy điền các thông tin sau một cách chính xác: Table name: Nhập RealtimeQAPlatform-Table. Tên này sẽ được sử dụng trong code Lambda của chúng ta sau này. Partition key (Khóa phân vùng - PK): Nhập tên: PK Chọn kiểu dữ liệu: String Giải thích: Đây là khóa chính, được DynamoDB sử dụng để phân phối dữ liệu trên các phân vùng vật lý. Nó sẽ lưu các giá trị như EVENT#\u0026lt;eventId\u0026gt;. Sort key (Khóa sắp xếp - SK): Tick vào ô Add sort key. Nhập tên: SK Chọn kiểu dữ liệu: String Giải thích: Khóa này cho phép chúng ta lưu trữ nhiều loại dữ liệu khác nhau có cùng Partition Key và sắp xếp chúng. Chúng ta sẽ dùng nó để phân loại dữ liệu, ví dụ: METADATA, QUESTION#\u0026lt;questionId\u0026gt;, POLL#\u0026lt;pollId\u0026gt;. Table settings: Giữ nguyên tùy chọn Default settings. Chế độ On-demand được chọn mặc định là lựa chọn tối ưu cho workshop này, giúp bạn chỉ trả tiền cho những tài nguyên bạn thực sự sử dụng mà không cần cấu hình phức tạp. Nhấn nút Create table ở dưới cùng bên phải để hoàn tất. Quá trình tạo bảng sẽ mất vài giây. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/",
+	"uri": "http://localhost:1313/vi/",
 	"title": "Xây dựng hệ thống Q&amp;A và Poll real-time với AWS AppSync, Lambda, DynamoDB",
 	"tags": [],
 	"description": "",
 	"content": "Xây dựng hệ thống Q\u0026amp;A và Poll real-time với AWS AppSync, Lambda, DynamoDB Tổng quan Workshop này hướng dẫn bạn từng bước xây dựng một nền tảng Q\u0026amp;A và bình chọn (Poll) realtime cho sự kiện trực tuyến, sử dụng các dịch vụ serverless hiện đại của AWS. Bạn sẽ thực hành triển khai cơ sở dữ liệu NoSQL với DynamoDB, xác thực người dùng bằng Cognito, xây dựng API GraphQL realtime với AppSync, triển khai logic nghiệp vụ bằng Lambda, và giám sát hệ thống qua CloudWatch.\nNội dung Giới thiệu\nTổng quan về bài toán tương tác realtime cho sự kiện và kiến trúc giải pháp serverless trên AWS.\nTriển khai cơ sở dữ liệu với DynamoDB\nTạo bảng DynamoDB với thiết kế Single-Table Lưu trữ dữ liệu sự kiện, câu hỏi, bình chọn Xác thực người dùng với Cognito\nTạo User Pool Cấu hình xác thực và phân quyền truy cập Xây dựng API GraphQL với AppSync\nTạo API AppSync Định nghĩa schema, thiết lập xác thực Kết nối với Lambda và DynamoDB Triển khai logic nghiệp vụ với Lambda\nTạo và deploy các hàm Lambda cho Q\u0026amp;A và Poll Kết nối Lambda với AppSync Giám sát và kiểm thử hệ thống\nLàm theo từng bước để hoàn thiện hệ thống Q\u0026amp;A và Poll realtime, ứng dụng thực tế cho các sự kiện trực tuyến\n"
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/",
 	"title": "Các bước chuẩn bị",
 	"tags": [],
 	"description": "",
 	"content": "Trước khi bắt đầu lab, hãy đảm bảo bạn đã có đầy đủ các điều kiện và công cụ cần thiết sau để quá trình thực hành diễn ra suôn sẻ.\n2.1. Yêu cầu về tài khoản AWS Tài khoản AWS đã được tạo và đang hoạt động. Tài khoản có quyền truy cập vào các dịch vụ sau: Amazon DynamoDB AWS Lambda Amazon Cognito AWS AppSync AWS IAM (Identity and Access Management) Đã đăng nhập thành công vào AWS Management Console. 2.2. Kiến thức nền tảng Hiểu biết cơ bản về giao diện và cách điều hướng trên AWS Management Console. Kiến thức cơ bản về JavaScript (Node.js) để hiểu và tùy chỉnh code cho các hàm Lambda. Hiểu biết sơ lược về khái niệm API, đặc biệt là GraphQL, sẽ là một lợi thế. Có kiến thức cơ bản về React và dòng lệnh. 2.3. Công cụ cần thiết Trình duyệt web hiện đại như Google Chrome, Mozilla Firefox, hoặc Microsoft Edge. (Tùy chọn) Một trình soạn thảo code như Visual Studio Code để xem và chuẩn bị các đoạn code trước khi dán vào Lambda Console. Có Node.js (phiên bản 18.x trở lên) và npm đã được cài đặt trên máy tính của bạn. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/",
+	"uri": "http://localhost:1313/vi/4-s3log/4.2-creates3bucket/",
 	"title": "Deploy các Hàm Logic với AWS Lambda",
 	"tags": [],
 	"description": "",
 	"content": "1. Tạo các Hàm Lambda\nTrên thanh tìm kiếm của AWS Management Console, gõ Lambda và chọn dịch vụ.\nLần lượt các hàm cần thiết. Quy trình cho mỗi hàm sẽ tương tự nhau: Tạo hàm -\u0026gt; Cấu hình -\u0026gt; Dán code -\u0026gt; Deploy.\nSau đó chọn Function ở menu bên trái để hiện danh sách Lambda Function Quy trình chung cho mỗi hàm:\nNhấn Create function. Chọn Author from scratch. Function name: Đặt tên cho hàm (ví dụ: createEventFunction). Runtime: Chọn Node.js 18.x. Permissions: Mở rộng mục Change default execution role, chọn Use an existing role và chọn RealtimeQAPlatform-LambdaRole mà chúng ta đã tạo ở Lab 3. Nhấn Create function. Sau khi hàm được tạo:\nVào tab Code, dán code tương ứng vào file index.mjs. Vào tab Configuration -\u0026gt; Environment variables -\u0026gt; Edit, thêm một biến môi trường mới với:\nKey: TABLE_NAME Value: RealtimeQAPlatform-Table Quay lại tab Code và nhấn Deploy. A. Hàm createEventFunction\nMục đích: Xử lý việc tạo một sự kiện mới.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, PutCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; import { randomUUID } from \u0026#34;crypto\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async (event) =\u0026gt; { const { name, description, creatorId } = event.input; const eventId = randomUUID(); const createdAt = new Date().toISOString(); const newEvent = { id: eventId, name, description, creatorId, createdAt, PK: `EVENT#${eventId}`, SK: `METADATA`, }; await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: newEvent, })); return newEvent; }; B. Hàm listEventsFunction\nMục đích: Lấy danh sách tất cả các sự kiện đã được tạo.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, ScanCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async () =\u0026gt; { const command = new ScanCommand({ TableName: TABLE_NAME, FilterExpression: \u0026#34;SK = :metadata\u0026#34;, ExpressionAttributeValues: { \u0026#34;:metadata\u0026#34;: \u0026#34;METADATA\u0026#34; }, }); const { Items } = await docClient.send(command); return Items || []; }; C. Hàm createQuestionFunction\nMục đích: Xử lý việc tạo một câu hỏi mới trong một sự kiện.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, PutCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; import { randomUUID } from \u0026#34;crypto\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async (event) =\u0026gt; { const { eventId, content, authorId, authorName } = event.input; const questionId = randomUUID(); const createdAt = new Date().toISOString(); const newQuestion = { id: questionId, eventId, content, author: { id: authorId, name: authorName }, upvotes: 0, createdAt, PK: `EVENT#${eventId}`, SK: `QUESTION#${questionId}`, }; await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: newQuestion, })); return newQuestion; }; D. Hàm upvoteQuestionFunction\nMục đích: Xử lý logic \u0026ldquo;toggle\u0026rdquo; upvote/bỏ upvote cho một câu hỏi.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, PutCommand, GetCommand, UpdateCommand, DeleteCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async (event) =\u0026gt; { const { eventId, questionId, userId } = event.input; const pk = `EVENT#${eventId}`; const questionSk = `QUESTION#${questionId}`; const voteSk = `VOTE#Q#${questionId}#U#${userId}`; const { Item: existingVote } = await docClient.send(new GetCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: voteSk } })); if (existingVote) { await docClient.send(new DeleteCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: voteSk } })); await docClient.send(new UpdateCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: questionSk }, UpdateExpression: \u0026#34;SET upvotes = upvotes - :dec\u0026#34;, ExpressionAttributeValues: { \u0026#34;:dec\u0026#34;: 1 }, })); } else { await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: { PK: pk, SK: voteSk, questionId, userId } })); await docClient.send(new UpdateCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: questionSk }, UpdateExpression: \u0026#34;SET upvotes = upvotes + :inc\u0026#34;, ExpressionAttributeValues: { \u0026#34;:inc\u0026#34;: 1 }, })); } const { Item: updatedQuestionData } = await docClient.send(new GetCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: questionSk } })); return updatedQuestionData; }; E. Hàm createPollFunction\nMục đích: Xử lý việc tạo một cuộc bình chọn mới.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, PutCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; import { randomUUID } from \u0026#34;crypto\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async (event) =\u0026gt; { const { eventId, questionText, options } = event.input; const pollId = randomUUID(); const optionsWithVotes = options.map(option =\u0026gt; ({ text: option.text, votes: 0 })); const newPoll = { id: pollId, eventId, questionText, totalVotes: 0, options: optionsWithVotes, PK: `EVENT#${eventId}`, SK: `POLL#${pollId}`, }; await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: newPoll, })); return newPoll; }; F. Hàm submitPollVoteFunction\nMục đích: Xử lý việc người dùng bỏ phiếu cho một bình chọn.\nCode (index.mjs):\nimport { DynamoDBClient } from \u0026#34;@aws-sdk/client-dynamodb\u0026#34;; import { DynamoDBDocumentClient, PutCommand, UpdateCommand, GetCommand } from \u0026#34;@aws-sdk/lib-dynamodb\u0026#34;; const client = new DynamoDBClient({}); const docClient = DynamoDBDocumentClient.from(client); const TABLE_NAME = process.env.TABLE_NAME; export const handler = async (event) =\u0026gt; { const { eventId, pollId, optionText, userId } = event.input; const pk = `EVENT#${eventId}`; const pollSk = `POLL#${pollId}`; const voteSk = `VOTE#P#${pollId}#U#${userId}`; const { Item: currentPoll } = await docClient.send(new GetCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: pollSk }})); if (!currentPoll) throw new Error(\u0026#34;Poll not found.\u0026#34;); const optionIndex = currentPoll.options.findIndex(opt =\u0026gt; opt.text === optionText); if (optionIndex === -1) throw new Error(\u0026#34;Option not found.\u0026#34;); const updatePollCmd = new UpdateCommand({ TableName: TABLE_NAME, Key: { PK: pk, SK: pollSk }, UpdateExpression: `SET options[${optionIndex}].votes = options[${optionIndex}].votes + :inc, totalVotes = totalVotes + :inc`, ExpressionAttributeValues: { \u0026#34;:inc\u0026#34;: 1 }, ReturnValues: \u0026#34;ALL_NEW\u0026#34; }); try { await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: { PK: pk, SK: voteSk, userId, votedOption: optionText }, ConditionExpression: \u0026#34;attribute_not_exists(SK)\u0026#34; })); const { Attributes } = await docClient.send(updatePollCmd); return Attributes; } catch (error) { if (error.name === \u0026#39;ConditionalCheckFailedException\u0026#39;) { throw new Error(\u0026#34;User has already voted on this poll.\u0026#34;); } throw error; } }; "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/",
+	"uri": "http://localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/",
 	"title": "Xác thực Người dùng với Amazon Cognito",
 	"tags": [],
 	"description": "",
 	"content": " Truy cập Bảng điều khiển Amazon Cognito\nTrên thanh tìm kiếm của AWS Management Console, gõ Cognito và chọn dịch vụ. Tạo một User Pool mới\nTrên trang chính của Cognito, nhấn vào nút Create user pool. Cấu hình User Pool\nỞ mục Application type chọn Single-page application (SPA)\nĐiền tên RealtimeQAPlatform-UserPool\nỞ config chọn email Tiếp theo nhấn Create user directory Cấu hình Callback URL\nĐây là một bước cực kỳ quan trọng để Cognito biết phải chuyển hướng người dùng về đâu sau khi họ đăng nhập thành công.\nSau khi User Pool được tạo, vào tab user pool vừa nãy -\u0026gt; Click vào user pool RealtimeQAPlatform-UserPool sẽ vào giao diện quản lý như sau: Kéo xuống và nhấn vào tên App client ở menu bên trái.\nChọn Create app client Điền tên RealtimeQAPlatform-userpool\nChọn Create app client Sau khi tạo thành công, bạn sẽ thấy giao diện như sau:\nChọn mục Login pages\nTrong phần Managed login pages configuration chọn edit Tại mục Allowed callback URLs nhập http://localhost:3000/event\nTại mục Allowed sign-out URLs nhập http://localhost:3000/auth\nGiải thích: Đây là các URL mà Cognito sẽ sử dụng để chuyển hướng người dùng sau khi họ đăng nhập hoặc đăng xuất. Chúng ta sẽ sử dụng chúng trong ứng dụng React của mình để đảm bảo người dùng được chuyển hướng đúng cách. Lướt xuống dưới cùng nhấn Save changes "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/",
+	"uri": "http://localhost:1313/vi/3-accessibilitytoinstances/3.3-iam/",
 	"title": "Cấu hình Phân quyền với AWS IAM",
 	"tags": [],
 	"description": "",
 	"content": "Trong phần này, chúng ta sẽ cấu hình IAM Role cho các hàm Lambda.\nBắt đầu quá trình tạo Role Trên thanh tìm kiếm của AWS Management Console, gõ IAM và chọn dịch vụ. Trong menu bên trái, chọn Roles. Nhấn vào nút Create role. Chọn Loại Trusted Entity Trusted entity type: Chọn AWS service. Use case: Chọn Lambda. Điều này có nghĩa là chúng ta đang tạo một Role dành riêng cho dịch vụ AWS Lambda sử dụng. Nhấn Next. Gắn các \u0026ldquo;Giấy phép\u0026rdquo; (Permissions Policies) Gắn policy cho phép Lambda ghi logs:\nTrong ô tìm kiếm permissions, gõ AWSLambdaBasicExecutionRole. Tick vào ô bên cạnh policy này. Policy này cấp cho Lambda quyền tối thiểu cần thiết để ghi logs ra Amazon CloudWatch, một việc cực kỳ quan trọng để gỡ lỗi sau này. Nhấn Next. Đặt tên và Hoàn tất việc tạo Role Role name: Đặt một cái tên dễ nhận biết, ví dụ: RealtimeQAPlatform-LambdaRole. Xem lại các thông tin và nhấn Create role. Thêm \u0026ldquo;Giấy phép\u0026rdquo; tùy chỉnh để truy cập DynamoDB Bây giờ chúng ta cần cấp thêm quyền cho Role này để nó có thể đọc và ghi vào bảng DynamoDB đã tạo.\nTrong danh sách các Roles, tìm và nhấn vào RealtimeQAPlatform-LambdaRole bạn vừa tạo. Trong tab Permissions, nhấn vào nút Add permissions và chọn Create inline policy. Bạn sẽ được chuyển đến trình tạo policy. Chọn tab JSON.\nXóa nội dung mặc định và dán đoạn mã JSON sau vào. Đoạn mã này định nghĩa một bộ quyền cụ thể cho bảng DynamoDB của chúng ta.\n{ \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;AllowDynamoDBActions\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;dynamodb:PutItem\u0026#34;, \u0026#34;dynamodb:UpdateItem\u0026#34;, \u0026#34;dynamodb:DeleteItem\u0026#34;, \u0026#34;dynamodb:GetItem\u0026#34;, \u0026#34;dynamodb:Query\u0026#34;, \u0026#34;dynamodb:Scan\u0026#34; , \u0026#34;Resource\u0026#34;: [ \u0026#34;arn:aws:dynamodb:YOUR_REGION:YOUR_ACCOUNT_ID:table/RealtimeQAPlatform-Table\u0026#34;, \u0026#34;arn:aws:dynamodb:YOUR_REGION:YOUR_ACCOUNT_ID:table/RealtimeQAPlatform-Table/index/*\u0026#34; ] } ] } Nhấn Next. Lưu ý: Hãy thay thế YOUR_ACCOUNT_ID và YOUR_REGION bằng thông tin tài khoản AWS của bạn.\nPolicy name: Đặt tên cho policy, ví dụ: DynamoDBAccessPolicy. Nhấn Create policy. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/",
+	"uri": "http://localhost:1313/vi/3-accessibilitytoinstances/",
 	"title": "Dựng Nền tảng Backend trên AWS",
 	"tags": [],
 	"description": "",
 	"content": "Trong phần này, chúng ta sẽ tiến hành xây dựng toàn bộ hạ tầng backend cho ứng dụng trên nền tảng AWS. Tất cả các thao tác sẽ được thực hiện trực tiếp trên AWS Management Console để có cái nhìn trực quan nhất về cách các dịch vụ kết nối với nhau.\nGiới thiệu về Amazon DynamoDB và Single-Table Design Amazon DynamoDB là một dịch vụ cơ sở dữ liệu NoSQL được quản lý hoàn toàn, cung cấp hiệu suất nhanh và có thể dự đoán được với khả năng mở rộng liền mạch. Khác với cơ sở dữ liệu quan hệ truyền thống (SQL), DynamoDB lưu trữ dữ liệu dưới dạng các cặp key-value, tối ưu cho các truy vấn tốc độ cao.\nĐể tận dụng tối đa sức mạnh của DynamoDB, chúng ta sẽ áp dụng một phương pháp thiết kế mạnh mẽ gọi là Single-Table Design (Thiết kế một bảng duy nhất). Thay vì tạo nhiều bảng cho mỗi loại dữ liệu (Events, Questions, Polls), chúng ta sẽ lưu trữ tất cả chúng trong một bảng duy nhất.\nLợi ích của Single-Table Design:\nHiệu năng cao: Giảm đáng kể số lượng truy vấn đến database. Thay vì phải \u0026ldquo;JOIN\u0026rdquo; nhiều bảng, chúng ta có thể lấy tất cả dữ liệu liên quan đến một sự kiện chỉ bằng một câu lệnh Query duy nhất. Tối ưu chi phí: Giảm chi phí vận hành bằng cách tập trung tài nguyên vào một bảng duy nhất thay vì phải cung cấp tài nguyên cho nhiều bảng riêng lẻ. Khả năng mở rộng: Dễ dàng mở rộng và quản lý khi ứng dụng phát triển. Giới thiệu về Amazon Cognito Amazon Cognito là một dịch vụ cung cấp giải pháp quản lý danh tính người dùng một cách an toàn và có khả năng mở rộng. Nó cho phép chúng ta dễ dàng thêm chức năng đăng ký, đăng nhập và kiểm soát quyền truy cập vào ứng dụng web và di động.\nTrong ứng dụng của chúng ta, Cognito sẽ đóng vai trò là \u0026ldquo;người gác cổng\u0026rdquo;, đảm bảo rằng chỉ những người dùng hợp lệ mới có thể thực hiện các hành động quan trọng như tạo sự kiện hoặc tạo poll.\nNội dung 3.1. Triển khai Cơ sở dữ liệu với Amazon DynamoDB 3.2. Xác thực Người dùng với Amazon Cognito 3.3. Cấu hình Phân quyền với AWS IAM\n"
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/",
+	"uri": "http://localhost:1313/vi/4-s3log/4.3-connectapi/",
 	"title": "Kết nối API và Logic",
 	"tags": [],
 	"description": "",
 	"content": "Kết nối API và Logic Giới thiệu về Data Sources và Resolvers Hiện tại, chúng ta có một AppSync API (cổng vào) và một loạt các hàm Lambda (bộ não xử lý), nhưng chúng chưa biết gì về nhau. Để kết nối chúng, chúng ta cần sử dụng hai khái niệm cốt lõi trong AppSync:\nData Sources (Nguồn dữ liệu):\nĐây là một cấu hình trong AppSync để nó \u0026ldquo;biết\u0026rdquo; về một tài nguyên AWS khác, ví dụ như một hàm Lambda hoặc một bảng DynamoDB. Chúng ta sẽ tạo một Data Source cho mỗi hàm Lambda đã tạo.\nResolvers (Trình phân giải):\nMột resolver là một đoạn logic được gắn vào một trường (field) cụ thể trong GraphQL Schema (ví dụ: mutation createEvent). Nhiệm vụ của nó là nhận yêu cầu GraphQL, chuyển tiếp đến Data Source tương ứng, và sau đó xử lý kết quả trả về.\nTrong lab này, chúng ta sẽ tạo các Data Source cần thiết và sau đó gắn các resolver để hoàn thiện luồng xử lý API.\nCác bước thực hiện 1. Tạo Data Source cho DynamoDB Truy cập vào AppSync Console.\nChọn API mà chúng ta đang làm việc.\nDi chuyển đến tab Data Sources.\nClick Add Data Source.\nĐặt tên cho data source: DynamoDB_Table_Source\nChọn Amazon DynamoDB table làm loại Data Source.\nChọn Region: ap-southeast-1\nChọn Table name: RealtimeQAPlatform-Table\nClick Create.\nLưu ý: Đây là data source kết nối tới DynamoDB trực tiếp. Chúng ta sẽ sử dụng nó trong các resolver sau.\n2. Tạo Data Source cho Lambda Functions Lặp lại các bước sau cho mỗi hàm Lambda bạn đã tạo ở 4.2 Deploy các hàm Logic với AWS Lambda:\nClick Add Data Source.\nĐặt tên cho data source: Đặt tên theo hàm Lambda tương ứng (ví dụ: Lambda_createEvent_Source).\nChọn AWS Lambda Function.\nRegion: ap-southeast-1\nFunction: Chọn Function đã tạo tương ứng (ví dụ: createEventFunction)\nClick Create.\nLưu ý: Đây là data source kết nối tới Lambda Function. Chúng ta sẽ sử dụng nó trong các resolver sau.\nDanh sách các Lambda cần tạo Data Source:\ncreateEventFunction listEventsFunction createQuestionFunction upvoteQuestionFunction createPollFunction submitPollVoteFunction 3. Gắn các Resolvers 3.1. Gắn resolver cho Query getEvent(...) Trong menu bên trái, chọn Schema.\nỞ phía bên phải của trang, sẽ thấy mục Resolvers. Hãy tìm đến Query getEvent(...): Event.\nChọn Attach.\nChọn Data Source: DynamoDB_Table_Source\nResolver Runtime: AppSync Javascript như hình dưới.\nClick Create.\nTrong cửa sổ code, dán đoạn code sau vào:\nimport { util } from \u0026#39;@aws-appsync/utils\u0026#39;; export function request(ctx) { const { id: eventId } = ctx.args; return { operation: \u0026#39;Query\u0026#39;, query: { expression: \u0026#39;PK = :pk\u0026#39;, expressionValues: { \u0026#39;:pk\u0026#39;: util.dynamodb.toDynamoDB(`EVENT#${eventId}`), }, }, }; } export function response(ctx) { if (ctx.error) { return util.error(ctx.error.message, ctx.error.type); } const items = ctx.result.items; if (!items || items.length === 0) { return util.error(`Event with id \u0026#39;${ctx.args.id}\u0026#39; not found.`, \u0026#34;NotFound\u0026#34;); } let event = {}; const questions = []; const polls = []; for (const item of items) { if (item.SK.startsWith(\u0026#39;METADATA\u0026#39;)) { event = item; } else if (item.SK.startsWith(\u0026#39;QUESTION#\u0026#39;)) { questions.push(item); } else if (item.SK.startsWith(\u0026#39;POLL#\u0026#39;)) { polls.push(item); } } event.questions = questions; event.polls = polls; return event; } Click Save để lưu resolver. Lưu ý: getEvent() là resolver duy nhất dùng AppSync Javascript. Các hàm resolver còn lại đều dùng Velocity Template Language (VTL).\n3.2. Gắn resolver cho Mutation CreateEvent(...) Trong menu bên trái, chọn Schema.\nỞ phía bên phải của trang, sẽ thấy mục Resolvers. Hãy tìm đến hàm CreateEvent(...) ở Mutation.\nChọn Attach.\nChọn Data Source: Lambda_createEvent_Source\nResolver Runtime: Velocity Template Language (VTL) như hình dưới.\nClick Create.\nSau khi tạo xong sẽ hiện ra cửa sổ code như hình dưới.\nTiếp tục thực hiện tương tự cho các Mutation/Query khác với các Lambda tương ứng:\nTên Mutation/Query Data Source Resolver Runtime CreateQuestion(...) Lambda_createQuestion_Source Velocity Template Language (VTL) UpvoteQuestion(...) Lambda_upvoteQuestion_Source Velocity Template Language (VTL) SubmitPollVote(...) Lambda_submitPollVote_Source Velocity Template Language (VTL) CreatePoll(...) Lambda_createPoll_Source Velocity Template Language (VTL) listEvents Lambda_listEvents_Source Velocity Template Language (VTL) Lưu ý:\nĐảm bảo chọn đúng Data Source tương ứng với từng Lambda Function. Tất cả các resolver này đều sử dụng Velocity Template Language (VTL). Thực hiện các bước tương tự như phần hướng dẫn cho CreateEvent(...). "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/",
+	"uri": "http://localhost:1313/vi/4-s3log/",
 	"title": "Xây dựng API Real-time với AWS AppSync và Lambda",
 	"tags": [],
 	"description": "",
 	"content": "Sau khi đã có nền tảng về cơ sở dữ liệu, xác thực và phân quyền, bây giờ là lúc chúng ta xây dựng tầng API. Tầng này đóng vai trò là cầu nối, cho phép ứng dụng frontend có thể giao tiếp và tương tác với backend một cách an toàn và hiệu quả. Chúng ta sẽ sử dụng AWS AppSync để tạo ra một API GraphQL mạnh mẽ, kết hợp với AWS Lambda để xử lý các logic nghiệp vụ phức tạp.\nGiới thiệu về AWS AppSync và GraphQL AWS AppSync là một dịch vụ được quản lý hoàn toàn giúp đơn giản hóa việc phát triển ứng dụng bằng cách cho phép bạn tạo một API GraphQL linh hoạt.\nGraphQL là gì?\nGraphQL là một ngôn ngữ truy vấn cho API, cho phép client yêu cầu chính xác những dữ liệu mà họ cần, không thừa, không thiếu. Điều này giúp giảm lượng dữ liệu truyền qua mạng và tăng tốc độ cho ứng dụng. Tại sao dùng AppSync?\nAppSync xử lý toàn bộ các công việc phức tạp như phân tích cú pháp request, kết nối đến các nguồn dữ liệu (data sources) như DynamoDB, Lambda, và đặc biệt là quản lý các kết nối real-time thông qua GraphQL Subscriptions. Trong lab này, chúng ta sẽ tạo một AppSync API, định nghĩa cấu trúc dữ liệu thông qua GraphQL Schema, và cấu hình các phương thức xác thực.\nNội dung: Cập nhật IAM Role Tạo S3 Bucket Tạo S3 Gateway endpoint Cấu hình Session logs "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/",
+	"uri": "http://localhost:1313/vi/5-portfwd/",
 	"title": "Tích Hợp và chạy thử",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/6-cleanup/",
+	"uri": "http://localhost:1313/vi/6-cleanup/",
 	"title": "Dọn dẹp tài nguyên  ",
 	"tags": [],
 	"description": "",
 	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nXóa EC2 instance Truy cập giao diện quản trị dịch vụ EC2 Click Instances. Click chọn cả 2 instance Public Linux Instance và Private Windows Instance. Click Instance state. Click Terminate instance, sau đó click Terminate để xác nhận. Truy cập giao diện quản trị dịch vụ IAM Click Roles. Tại ô tìm kiếm , điền SSM. Click chọn SSM-Role. Click Delete, sau đó điền tên role SSM-Role và click Delete để xóa role. Click Users. Click chọn user Portfwd. Click Delete, sau đó điền tên user Portfwd và click Delete để xóa user. Xóa S3 bucket Truy cập giao diện quản trị dịch vụ System Manager - Session Manager. Click tab Preferences. Click Edit. Kéo chuột xuống dưới. Tại mục S3 logging. Bỏ chọn Enable để tắt tính năng logging. Kéo chuột xuống dưới. Click Save. Truy cập giao diện quản trị dịch vụ S3 Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 ) Click Empty. Điền permanently delete, sau đó click Empty để tiến hành xóa object trong bucket. Click Exit. Sau khi xóa hết object trong bucket, click Delete Điền tên S3 bucket, sau đó click Delete bucket để tiến hành xóa S3 bucket. Xóa các VPC Endpoint Truy cập vào giao diện quản trị dịch vụ VPC Click Endpoints. Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm SSM, SSMMESSAGES, EC2MESSAGES, S3GW. Click Actions. Click Delete VPC endpoints. Tại ô confirm , điền delete. Click Delete để tiến hành xóa các endpoints. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo. Xóa VPC Truy cập vào giao diện quản trị dịch vụ VPC Click Your VPCs. Click chọn Lab VPC. Click Actions. Click Delete VPC. Tại ô confirm, điền delete để xác nhận, click Delete để thực hiện xóa Lab VPC và các tài nguyên liên quan. "
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/",
+	"uri": "http://localhost:1313/vi/2-prerequiste/2.1-createec2/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/",
+	"uri": "http://localhost:1313/vi/5-portfwd/5.1-setup/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/categories/",
+	"uri": "http://localhost:1313/vi/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://7475-trunghau.github.io/aws-serverless-qa-app/vi/tags/",
+	"uri": "http://localhost:1313/vi/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
