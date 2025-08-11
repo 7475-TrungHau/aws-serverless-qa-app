@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
+                />
+  </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/1-introduce/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -78,6 +91,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/"
+                />
+  </url><url>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.2-test/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.2-test/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.2-test/"
                 />
   </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
@@ -169,18 +195,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/6-cleanup/"
-                />
-  </url><url>
-    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
                 />
   </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/vi/categories/</loc>

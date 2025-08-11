@@ -15,6 +15,19 @@
                 href="https://7475-trunghau.github.io/aws-serverless-qa-app/"
                 />
   </url><url>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/"
+                />
+  </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,6 +78,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://7475-trunghau.github.io/aws-serverless-qa-app/4-s3log/4.2-creates3bucket/"
+                />
+  </url><url>
+    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.2-test/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.2-test/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.2-test/"
                 />
   </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/2-prerequiste/</loc>
@@ -159,7 +185,7 @@
                 />
   </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/6-cleanup/</loc>
-    <lastmod>1970-01-01T07:33:42+07:00</lastmod>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -169,18 +195,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://7475-trunghau.github.io/aws-serverless-qa-app/6-cleanup/"
-                />
-  </url><url>
-    <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://7475-trunghau.github.io/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://7475-trunghau.github.io/aws-serverless-qa-app/5-portfwd/5.1-setup/"
                 />
   </url><url>
     <loc>https://7475-trunghau.github.io/aws-serverless-qa-app/categories/</loc>

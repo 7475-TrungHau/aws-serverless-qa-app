@@ -12,21 +12,21 @@
     <title>Building a Real-time Q&amp;A and Poll System with AWS AppSync, Lambda, DynamoDB :: AWS System Manager</title>
 
     
-    <link href="/aws-serverless-qa-app/css/nucleus.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/fontawesome-all.min.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/hybrid.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/featherlight.min.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/perfect-scrollbar.min.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/auto-complete.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/atom-one-dark-reasonable.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/theme.css?1754942301" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/hugo-theme.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/nucleus.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/fontawesome-all.min.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/hybrid.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/featherlight.min.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/perfect-scrollbar.min.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/auto-complete.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/atom-one-dark-reasonable.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/theme.css?1754952458" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/hugo-theme.css?1754952458" rel="stylesheet">
     
-    <link href="/aws-serverless-qa-app/css/theme-workshop.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/theme-workshop.css?1754952458" rel="stylesheet">
     
     
 
-    <script src="/aws-serverless-qa-app/js/jquery-3.3.1.min.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/jquery-3.3.1.min.js?1754952458"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/lunr.min.js?1754942301"></script>
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/auto-complete.js?1754942301"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/lunr.min.js?1754952458"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/auto-complete.js?1754952458"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "https:\/\/7475-trunghau.github.io\/aws-serverless-qa-app\/";
@@ -66,7 +66,7 @@
     var baseurl = "https:\/\/7475-trunghau.github.io\/aws-serverless-qa-app\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/search.js?1754942301"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/search.js?1754952458"></script>
     
   </div>
 
@@ -379,13 +379,13 @@
 
 
 
-<li data-nav-id="/aws-serverless-qa-app/5-portfwd/" title="Port Forwarding" class="dd-item 
+<li data-nav-id="/aws-serverless-qa-app/5-portfwd/" title="Setup client" class="dd-item 
         
         
         
         ">
   <a href="/aws-serverless-qa-app/5-portfwd/">
-     <b> 5. </b> Port Forwarding
+     <b> 5. </b> Setup client
     
     <i class="fas fa-check read-icon"></i>
     
@@ -410,13 +410,41 @@
 
 
 
-<li data-nav-id="/aws-serverless-qa-app/5-portfwd/5.1-setup/" title="" class="dd-item 
+<li data-nav-id="/aws-serverless-qa-app/5-portfwd/5.1-setup/" title="Configure and Connect the Frontend to AWS Backend" class="dd-item 
         
         
         
         ">
   <a href="/aws-serverless-qa-app/5-portfwd/5.1-setup/">
+     <b> 5.1 </b> Configure and Connect the Frontend to AWS Backend
     
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/aws-serverless-qa-app/5-portfwd/5.2-test/" title="Integrate and Test the Application" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/aws-serverless-qa-app/5-portfwd/5.2-test/">
+     <b> 5.2 </b> Integrate and Test the Application
     
     <i class="fas fa-check read-icon"></i>
     
@@ -445,13 +473,13 @@
 
 
 
-<li data-nav-id="/aws-serverless-qa-app/6-cleanup/" title="Clean up resources" class="dd-item 
+<li data-nav-id="/aws-serverless-qa-app/6-cleanup/" title="Resource Cleanup" class="dd-item 
         
         
         
         ">
   <a href="/aws-serverless-qa-app/6-cleanup/">
-    <b>6. </b>Clean up resources
+    <b>6. </b>Resource Cleanup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -866,6 +894,22 @@ Overview of the real-time interaction problem for events and the serverless solu
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -905,19 +949,19 @@ Overview of the real-time interaction problem for events and the serverless solu
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/aws-serverless-qa-app/js/clipboard.min.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.min.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.jquery.min.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/jquery.sticky.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/featherlight.min.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/highlight.pack.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/clipboard.min.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.min.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.jquery.min.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/jquery.sticky.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/featherlight.min.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/highlight.pack.js?1754952458"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/aws-serverless-qa-app/js/modernizr.custom-3.6.0.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/learn.js?1754942301"></script>
-    <script src="/aws-serverless-qa-app/js/hugo-learn.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/modernizr.custom-3.6.0.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/learn.js?1754952458"></script>
+    <script src="/aws-serverless-qa-app/js/hugo-learn.js?1754952458"></script>
 
-    <link href="/aws-serverless-qa-app/mermaid/mermaid.css?1754942301" rel="stylesheet" />
-    <script src="/aws-serverless-qa-app/mermaid/mermaid.js?1754942301"></script>
+    <link href="/aws-serverless-qa-app/mermaid/mermaid.css?1754952458" rel="stylesheet" />
+    <script src="/aws-serverless-qa-app/mermaid/mermaid.js?1754952458"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
