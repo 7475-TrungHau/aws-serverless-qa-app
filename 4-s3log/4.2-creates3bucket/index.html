@@ -12,21 +12,21 @@
     <title>Deploy Logic Functions with AWS Lambda :: AWS System Manager</title>
 
     
-    <link href="/aws-serverless-qa-app/css/nucleus.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/fontawesome-all.min.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/hybrid.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/featherlight.min.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/perfect-scrollbar.min.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/auto-complete.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/atom-one-dark-reasonable.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/theme.css?1754941275" rel="stylesheet">
-    <link href="/aws-serverless-qa-app/css/hugo-theme.css?1754941275" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/nucleus.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/fontawesome-all.min.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/hybrid.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/featherlight.min.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/perfect-scrollbar.min.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/auto-complete.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/atom-one-dark-reasonable.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/theme.css?1754942301" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/hugo-theme.css?1754942301" rel="stylesheet">
     
-    <link href="/aws-serverless-qa-app/css/theme-workshop.css?1754941275" rel="stylesheet">
+    <link href="/aws-serverless-qa-app/css/theme-workshop.css?1754942301" rel="stylesheet">
     
     
 
-    <script src="/aws-serverless-qa-app/js/jquery-3.3.1.min.js?1754941275"></script>
+    <script src="/aws-serverless-qa-app/js/jquery-3.3.1.min.js?1754942301"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/lunr.min.js?1754941275"></script>
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/auto-complete.js?1754941275"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/lunr.min.js?1754942301"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/auto-complete.js?1754942301"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "https:\/\/7475-trunghau.github.io\/aws-serverless-qa-app\/";
@@ -66,7 +66,7 @@
     var baseurl = "https:\/\/7475-trunghau.github.io\/aws-serverless-qa-app\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/aws-serverless-qa-app/%20js/search.js?1754941275"></script>
+<script type="text/javascript" src="/aws-serverless-qa-app/%20js/search.js?1754942301"></script>
     
   </div>
 
@@ -646,7 +646,7 @@
 <p>In the AWS Management Console search bar, type Lambda and select the service.</p>
 <p>You will need to create each required function. The process for each function is similar: Create function -&gt; Configure -&gt; Paste code -&gt; Deploy.</p>
 <p>Then select <strong>Function</strong> in the left menu to view the list of <strong>Lambda Functions</strong><br>
-<img src="/images/4.s3/image_4.2.1.png" alt="Create Lambda"></p>
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.1.png" alt="Create Lambda"></p>
 <p><strong>General process for each function:</strong></p>
 <ul>
 <li>Click <strong>Create function</strong>.</li>
@@ -655,27 +655,27 @@
 <li><strong>Runtime</strong>: Select <strong>Node.js 18.x</strong>.</li>
 <li><strong>Permissions</strong>: Expand <strong>Change default execution role</strong>, select <strong>Use an existing role</strong>, and choose <code>RealtimeQAPlatform-LambdaRole</code> created in Lab 3.</li>
 <li>Click <strong>Create function</strong>.
-<img src="/images/4.s3/image_4.2.2.png" alt="Create Lambda">
-<img src="/images/4.s3/image_4.2.3.png" alt="Create Lambda"></li>
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.2.png" alt="Create Lambda">
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.3.png" alt="Create Lambda"></li>
 </ul>
 <p>After the function is created:</p>
 <ul>
 <li>
 <p>Go to the <strong>Code</strong> tab and paste the corresponding code into the <code>index.mjs</code> file.
-<img src="/images/4.s3/image_4.2.4.png" alt="Create Lambda"></p>
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.4.png" alt="Create Lambda"></p>
 </li>
 <li>
 <p>Go to the <strong>Configuration</strong> tab -&gt; <strong>Environment variables</strong> -&gt; <strong>Edit</strong>, add a new environment variable:</p>
 <ul>
 <li><strong>Key</strong>: <code>TABLE_NAME</code></li>
 <li><strong>Value</strong>: <code>RealtimeQAPlatform-Table</code>
-<img src="/images/4.s3/image_4.2.5.png" alt="Create Lambda">
-<img src="/images/4.s3/image_4.2.6.png" alt="Create Lambda"></li>
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.5.png" alt="Create Lambda">
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.6.png" alt="Create Lambda"></li>
 </ul>
 </li>
 <li>
 <p>Return to the <strong>Code</strong> tab and click <strong>Deploy</strong>.
-<img src="/images/4.s3/image_4.2.7.png" alt="Create Lambda"></p>
+<img src="/aws-serverless-qa-app/images/4.s3/image_4.2.7.png" alt="Create Lambda"></p>
 </li>
 </ul>
 <hr>
@@ -1167,19 +1167,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/aws-serverless-qa-app/js/clipboard.min.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.min.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.jquery.min.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/jquery.sticky.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/featherlight.min.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/highlight.pack.js?1754941275"></script>
+    <script src="/aws-serverless-qa-app/js/clipboard.min.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.min.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/perfect-scrollbar.jquery.min.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/jquery.sticky.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/featherlight.min.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/highlight.pack.js?1754942301"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/aws-serverless-qa-app/js/modernizr.custom-3.6.0.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/learn.js?1754941275"></script>
-    <script src="/aws-serverless-qa-app/js/hugo-learn.js?1754941275"></script>
+    <script src="/aws-serverless-qa-app/js/modernizr.custom-3.6.0.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/learn.js?1754942301"></script>
+    <script src="/aws-serverless-qa-app/js/hugo-learn.js?1754942301"></script>
 
-    <link href="/aws-serverless-qa-app/mermaid/mermaid.css?1754941275" rel="stylesheet" />
-    <script src="/aws-serverless-qa-app/mermaid/mermaid.js?1754941275"></script>
+    <link href="/aws-serverless-qa-app/mermaid/mermaid.css?1754942301" rel="stylesheet" />
+    <script src="/aws-serverless-qa-app/mermaid/mermaid.js?1754942301"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
