@@ -2,209 +2,209 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/"
+                href="/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
+    <loc>/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
   </url><url>
-    <loc>http://localhost:1313/1-introduce/</loc>
+    <loc>/1-introduce/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/1-introduce/"
+                href="/vi/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/1-introduce/"
+                href="/1-introduce/"
                 />
   </url><url>
-    <loc>http://localhost:1313/4-s3log/4.1-appsync/</loc>
+    <loc>/4-s3log/4.1-appsync/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/4-s3log/4.1-appsync/"
+                href="/vi/4-s3log/4.1-appsync/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/4-s3log/4.1-appsync/"
+                href="/4-s3log/4.1-appsync/"
                 />
   </url><url>
-    <loc>http://localhost:1313/4-s3log/4.2-creates3bucket/</loc>
+    <loc>/4-s3log/4.2-creates3bucket/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/4-s3log/4.2-creates3bucket/"
+                href="/vi/4-s3log/4.2-creates3bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/4-s3log/4.2-creates3bucket/"
+                href="/4-s3log/4.2-creates3bucket/"
                 />
   </url><url>
-    <loc>http://localhost:1313/2-prerequiste/</loc>
+    <loc>/2-prerequiste/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/2-prerequiste/"
+                href="/vi/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/2-prerequiste/"
+                href="/2-prerequiste/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-accessibilitytoinstances/3.2-private-instance/</loc>
+    <loc>/3-accessibilitytoinstances/3.2-private-instance/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/"
+                href="/vi/3-accessibilitytoinstances/3.2-private-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-accessibilitytoinstances/3.2-private-instance/"
+                href="/3-accessibilitytoinstances/3.2-private-instance/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-accessibilitytoinstances/</loc>
+    <loc>/3-accessibilitytoinstances/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-accessibilitytoinstances/"
+                href="/vi/3-accessibilitytoinstances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-accessibilitytoinstances/"
+                href="/3-accessibilitytoinstances/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-accessibilitytoinstances/3.3-iam/</loc>
+    <loc>/3-accessibilitytoinstances/3.3-iam/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-accessibilitytoinstances/3.3-iam/"
+                href="/vi/3-accessibilitytoinstances/3.3-iam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-accessibilitytoinstances/3.3-iam/"
+                href="/3-accessibilitytoinstances/3.3-iam/"
                 />
   </url><url>
-    <loc>http://localhost:1313/4-s3log/4.3-connectapi/</loc>
+    <loc>/4-s3log/4.3-connectapi/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/4-s3log/4.3-connectapi/"
+                href="/vi/4-s3log/4.3-connectapi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/4-s3log/4.3-connectapi/"
+                href="/4-s3log/4.3-connectapi/"
                 />
   </url><url>
-    <loc>http://localhost:1313/4-s3log/</loc>
+    <loc>/4-s3log/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/4-s3log/"
+                href="/vi/4-s3log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/4-s3log/"
+                href="/4-s3log/"
                 />
   </url><url>
-    <loc>http://localhost:1313/5-portfwd/</loc>
+    <loc>/5-portfwd/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/5-portfwd/"
+                href="/vi/5-portfwd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/5-portfwd/"
+                href="/5-portfwd/"
                 />
   </url><url>
-    <loc>http://localhost:1313/6-cleanup/</loc>
+    <loc>/6-cleanup/</loc>
     <lastmod>1970-01-01T07:33:42+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/6-cleanup/"
+                href="/vi/6-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/6-cleanup/"
+                href="/6-cleanup/"
                 />
   </url><url>
-    <loc>http://localhost:1313/5-portfwd/5.1-setup/</loc>
+    <loc>/5-portfwd/5.1-setup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/5-portfwd/5.1-setup/"
+                href="/vi/5-portfwd/5.1-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/5-portfwd/5.1-setup/"
+                href="/5-portfwd/5.1-setup/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/categories/"
+                href="/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/tags/"
+                href="/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="/tags/"
                 />
   </url>
 </urlset>
