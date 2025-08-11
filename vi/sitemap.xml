@@ -2,223 +2,223 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/1-introduce/</loc>
+    <loc>/aws-serverless-qa-app/vi/1-introduce/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce/"
+                href="/aws-serverless-qa-app/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce/"
+                href="/aws-serverless-qa-app/vi/1-introduce/"
                 />
   </url><url>
-    <loc>/vi/4-s3log/4.1-appsync/</loc>
+    <loc>/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-s3log/4.1-appsync/"
+                href="/aws-serverless-qa-app/4-s3log/4.1-appsync/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-s3log/4.1-appsync/"
+                href="/aws-serverless-qa-app/vi/4-s3log/4.1-appsync/"
                 />
   </url><url>
-    <loc>/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
+    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
+                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.1-amazon-dynamodb/"
                 />
   </url><url>
-    <loc>/vi/</loc>
+    <loc>/aws-serverless-qa-app/vi/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/aws-serverless-qa-app/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="/aws-serverless-qa-app/vi/"
                 />
   </url><url>
-    <loc>/vi/2-prerequiste/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-prerequiste/"
+                href="/aws-serverless-qa-app/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-prerequiste/"
+                href="/aws-serverless-qa-app/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>/vi/4-s3log/4.2-creates3bucket/</loc>
+    <loc>/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-s3log/4.2-creates3bucket/"
+                href="/aws-serverless-qa-app/4-s3log/4.2-creates3bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-s3log/4.2-creates3bucket/"
+                href="/aws-serverless-qa-app/vi/4-s3log/4.2-creates3bucket/"
                 />
   </url><url>
-    <loc>/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
+    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-accessibilitytoinstances/3.2-private-instance/"
+                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.2-private-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-accessibilitytoinstances/3.2-private-instance/"
+                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.2-private-instance/"
                 />
   </url><url>
-    <loc>/vi/3-accessibilitytoinstances/3.3-iam/</loc>
+    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-accessibilitytoinstances/3.3-iam/"
+                href="/aws-serverless-qa-app/3-accessibilitytoinstances/3.3-iam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-accessibilitytoinstances/3.3-iam/"
+                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/3.3-iam/"
                 />
   </url><url>
-    <loc>/vi/3-accessibilitytoinstances/</loc>
+    <loc>/aws-serverless-qa-app/vi/3-accessibilitytoinstances/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-accessibilitytoinstances/"
+                href="/aws-serverless-qa-app/3-accessibilitytoinstances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-accessibilitytoinstances/"
+                href="/aws-serverless-qa-app/vi/3-accessibilitytoinstances/"
                 />
   </url><url>
-    <loc>/vi/4-s3log/4.3-connectapi/</loc>
+    <loc>/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-s3log/4.3-connectapi/"
+                href="/aws-serverless-qa-app/4-s3log/4.3-connectapi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-s3log/4.3-connectapi/"
+                href="/aws-serverless-qa-app/vi/4-s3log/4.3-connectapi/"
                 />
   </url><url>
-    <loc>/vi/4-s3log/</loc>
+    <loc>/aws-serverless-qa-app/vi/4-s3log/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-s3log/"
+                href="/aws-serverless-qa-app/4-s3log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-s3log/"
+                href="/aws-serverless-qa-app/vi/4-s3log/"
                 />
   </url><url>
-    <loc>/vi/5-portfwd/</loc>
+    <loc>/aws-serverless-qa-app/vi/5-portfwd/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-portfwd/"
+                href="/aws-serverless-qa-app/5-portfwd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-portfwd/"
+                href="/aws-serverless-qa-app/vi/5-portfwd/"
                 />
   </url><url>
-    <loc>/vi/6-cleanup/</loc>
+    <loc>/aws-serverless-qa-app/vi/6-cleanup/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-cleanup/"
+                href="/aws-serverless-qa-app/6-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-cleanup/"
+                href="/aws-serverless-qa-app/vi/6-cleanup/"
                 />
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/2.1-createec2/</loc>
+    <loc>/aws-serverless-qa-app/vi/2-prerequiste/2.1-createec2/</loc>
   </url><url>
-    <loc>/vi/5-portfwd/5.1-setup/</loc>
+    <loc>/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-portfwd/5.1-setup/"
+                href="/aws-serverless-qa-app/5-portfwd/5.1-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-portfwd/5.1-setup/"
+                href="/aws-serverless-qa-app/vi/5-portfwd/5.1-setup/"
                 />
   </url><url>
-    <loc>/vi/categories/</loc>
+    <loc>/aws-serverless-qa-app/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="/aws-serverless-qa-app/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="/aws-serverless-qa-app/vi/categories/"
                 />
   </url><url>
-    <loc>/vi/tags/</loc>
+    <loc>/aws-serverless-qa-app/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="/aws-serverless-qa-app/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="/aws-serverless-qa-app/vi/tags/"
                 />
   </url>
 </urlset>
